@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+from datetime import datetime
 
 def main():
 
@@ -19,8 +20,14 @@ def main():
     #Print the betakey code to verify
     #print(BetaKeyCode.text)
 
+
+    now=datetime.now()
+
+    year=now.strftime("%Y")
+    month=now.strftime("%B")
+
     f=open("Keys.txt", "a")
-    f.write("Nov 2023 " + BetaKeyCode.text)
+    f.write(month + " " + year + " " + BetaKeyCode.text + "\n")
     f.close()
 
 
